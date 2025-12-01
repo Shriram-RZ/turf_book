@@ -32,7 +32,7 @@ class NotificationServiceTest {
     }
 
     @Test
-    void getUserNotifications_ShouldReturnListOfNotificationResponses() {
+    void getUserNotifications_ShouldReturnListOfNotifications() {
         Long userId = 1L;
         Notification notification1 = new Notification();
         notification1.setId(1L);
@@ -53,7 +53,7 @@ class NotificationServiceTest {
         when(notificationRepository.findByUserIdOrderByCreatedAtDesc(userId))
                 .thenReturn(Arrays.asList(notification1, notification2));
 
-        List<NotificationResponse> responses = notificationService.getMyNotifications(userId);
+        List<Notification> responses = notificationService.getUserNotifications(userId);
 
         assertEquals(2, responses.size());
         assertEquals("Test Notification 1", responses.get(0).getMessage());
@@ -64,14 +64,16 @@ class NotificationServiceTest {
     @Test
     void markAsRead_ShouldMarkNotificationAsRead() {
         Long notificationId = 1L;
+        Long userId = 1L;
         Notification notification = new Notification();
         notification.setId(notificationId);
+        notification.setUserId(userId);
         notification.setRead(false);
 
         when(notificationRepository.findById(notificationId)).thenReturn(Optional.of(notification));
         when(notificationRepository.save(any(Notification.class))).thenReturn(notification);
 
-        notificationService.markAsRead(notificationId);
+        notificationService.markAsRead(notificationId, userId);
 
         assertTrue(notification.getRead());
         verify(notificationRepository, times(1)).findById(notificationId);
@@ -81,9 +83,10 @@ class NotificationServiceTest {
     @Test
     void markAsRead_ShouldThrowException_WhenNotificationNotFound() {
         Long notificationId = 1L;
+        Long userId = 1L;
         when(notificationRepository.findById(notificationId)).thenReturn(Optional.empty());
 
-        assertThrows(RuntimeException.class, () -> notificationService.markAsRead(notificationId));
+        assertThrows(RuntimeException.class, () -> notificationService.markAsRead(notificationId, userId));
         verify(notificationRepository, times(1)).findById(notificationId);
         verify(notificationRepository, never()).save(any(Notification.class));
     }
