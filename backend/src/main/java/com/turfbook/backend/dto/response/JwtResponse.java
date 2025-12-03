@@ -13,19 +13,19 @@ public class JwtResponse {
     private Long userId;
     private String email;
     private String name;
-    private UserRole role;
+    private String role;
 
     // Constructors
     public JwtResponse() {
     }
 
-    public JwtResponse(String token, String refreshToken, Long userId, String email, String name, UserRole role) {
+    public JwtResponse(String token, String refreshToken, Long userId, String email, String name, String role) {
         this.token = token;
         this.refreshToken = refreshToken;
         this.userId = userId;
         this.email = email;
         this.name = name;
-        this.role = role;
+        this.role = role; // Assuming role is a String here based on usage in AuthController
     }
 
     // Getters and Setters
@@ -77,11 +77,11 @@ public class JwtResponse {
         this.name = name;
     }
 
-    public UserRole getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(UserRole role) {
+    public void setRole(String role) {
         this.role = role;
     }
 }

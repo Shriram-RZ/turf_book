@@ -96,8 +96,13 @@ public class AuthDto {
         private String email;
         private String role;
 
-        public JwtResponse(String accessToken, Long id, String username, String email, String role) {
+        @com.fasterxml.jackson.annotation.JsonProperty("refreshToken")
+        private String refreshToken;
+
+        public JwtResponse(String accessToken, String refreshToken, Long id, String username, String email,
+                String role) {
             this.token = accessToken;
+            this.refreshToken = refreshToken;
             this.id = id;
             this.username = username;
             this.email = email;

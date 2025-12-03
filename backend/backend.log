@@ -37,204 +37,231 @@ WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.0)
 
-2025-11-27T09:48:18.384+05:30  INFO 50973 --- [turf-booking-backend] [           main] c.t.backend.TurfBookingApplication       : Starting TurfBookingApplication using Java 25.0.1 with PID 50973 (/home/shriram-dev/Documents/Projects/turf_book/backend/target/classes started by shriram-dev in /home/shriram-dev/Documents/Projects/turf_book/backend)
-2025-11-27T09:48:18.386+05:30  INFO 50973 --- [turf-booking-backend] [           main] c.t.backend.TurfBookingApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-11-27T09:48:18.814+05:30  INFO 50973 --- [turf-booking-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-11-27T09:48:18.883+05:30  INFO 50973 --- [turf-booking-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 15 JPA repository interfaces.
+2025-12-01T20:58:34.932+05:30  INFO 15847 --- [turf-booking-backend] [           main] c.t.backend.TurfBookingApplication       : Starting TurfBookingApplication using Java 25.0.1 with PID 15847 (/home/shriram-dev/Documents/Projects/turf_book/backend/target/classes started by shriram-dev in /home/shriram-dev/Documents/Projects/turf_book/backend)
+2025-12-01T20:58:34.935+05:30  INFO 15847 --- [turf-booking-backend] [           main] c.t.backend.TurfBookingApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-12-01T20:58:35.869+05:30  INFO 15847 --- [turf-booking-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-01T20:58:35.978+05:30  INFO 15847 --- [turf-booking-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 16 JPA repository interfaces.
 WARNING: A restricted method in java.lang.System has been called
 WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (file:/home/shriram-dev/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.16/tomcat-embed-core-10.1.16.jar)
 WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
 WARNING: Restricted methods will be blocked in a future release unless native access is enabled
 
-2025-11-27T09:48:19.260+05:30  INFO 50973 --- [turf-booking-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-11-27T09:48:19.266+05:30  INFO 50973 --- [turf-booking-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-11-27T09:48:19.266+05:30  INFO 50973 --- [turf-booking-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
-2025-11-27T09:48:19.295+05:30  INFO 50973 --- [turf-booking-backend] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-11-27T09:48:19.296+05:30  INFO 50973 --- [turf-booking-backend] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 877 ms
-2025-11-27T09:48:19.350+05:30  INFO 50973 --- [turf-booking-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-11-27T09:48:19.472+05:30  INFO 50973 --- [turf-booking-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@38d80d65
-2025-11-27T09:48:19.474+05:30  INFO 50973 --- [turf-booking-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-11-27T09:48:19.523+05:30  INFO 50973 --- [turf-booking-backend] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-11-27T09:48:19.558+05:30  INFO 50973 --- [turf-booking-backend] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
-2025-11-27T09:48:19.579+05:30  INFO 50973 --- [turf-booking-backend] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-11-27T09:48:19.717+05:30  INFO 50973 --- [turf-booking-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-11-27T09:48:19.775+05:30  WARN 50973 --- [turf-booking-backend] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-11-27T09:48:20.406+05:30  INFO 50973 --- [turf-booking-backend] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-Hibernate: alter table booking_participants add column payment_id bigint
-Hibernate: alter table bookings modify column status enum ('PENDING','CONFIRMED','EXPIRED','CANCELLED','COMPLETED') not null
-2025-11-27T09:48:20.613+05:30  WARN 50973 --- [turf-booking-backend] [           main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table bookings modify column status enum ('PENDING','CONFIRMED','EXPIRED','CANCELLED','COMPLETED') not null" via JDBC [Data truncated for column 'status' at row 1]
-
-org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table bookings modify column status enum ('PENDING','CONFIRMED','EXPIRED','CANCELLED','COMPLETED') not null" via JDBC [Data truncated for column 'status' at row 1]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:574) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:514) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:333) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
-	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:84) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:232) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:286) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
-	at java.base/java.util.HashMap.forEach(HashMap.java:1430) ~[na:na]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
-	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
-	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:295) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.1.jar:6.1.1]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.1.1.jar:6.1.1]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.1.jar:6.1.1]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.1.jar:6.1.1]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1771) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:689) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1166) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1686) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1435) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1441) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1348) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:769) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:752) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1441) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1348) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:769) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:752) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:413) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1166) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) ~[spring-beans-6.1.1.jar:6.1.1]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:210) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:173) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:168) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:153) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4850) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328) ~[na:na]
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:149) ~[na:na]
-	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:845) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328) ~[na:na]
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:149) ~[na:na]
-	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:240) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:917) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:488) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:501) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:218) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:610) ~[spring-context-6.1.1.jar:6.1.1]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:455) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:323) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1342) ~[spring-boot-3.2.0.jar:3.2.0]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1331) ~[spring-boot-3.2.0.jar:3.2.0]
-	at com.turfbook.backend.TurfBookingApplication.main(TurfBookingApplication.java:12) ~[classes/:na]
-Caused by: java.sql.SQLException: Data truncated for column 'status' at row 1
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.1.0.jar:8.1.0]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.1.0.jar:8.1.0]
-	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-j-8.1.0.jar:8.1.0]
-	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-j-8.1.0.jar:8.1.0]
-	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.0.1.jar:na]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80) ~[hibernate-core-6.3.1.Final.jar:6.3.1.Final]
-	... 132 common frames omitted
-
-Hibernate: alter table friends modify column status enum ('SENT','PENDING','ACCEPTED','REJECTED','REMOVED','BLOCKED') not null
-Hibernate: alter table matches add column payment_status varchar(255)
-Hibernate: alter table team_members add column status varchar(255) not null
-Hibernate: alter table booking_participants drop index UKllgh8wfd7cxam1iw4y0ww3acg
+2025-12-01T20:58:36.511+05:30  INFO 15847 --- [turf-booking-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-01T20:58:36.518+05:30  INFO 15847 --- [turf-booking-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-01T20:58:36.518+05:30  INFO 15847 --- [turf-booking-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-01T20:58:36.553+05:30  INFO 15847 --- [turf-booking-backend] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-01T20:58:36.554+05:30  INFO 15847 --- [turf-booking-backend] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1544 ms
+2025-12-01T20:58:36.610+05:30  INFO 15847 --- [turf-booking-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-01T20:58:36.735+05:30  INFO 15847 --- [turf-booking-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3592c1c4
+2025-12-01T20:58:36.736+05:30  INFO 15847 --- [turf-booking-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-01T20:58:36.790+05:30  INFO 15847 --- [turf-booking-backend] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-01T20:58:36.815+05:30  INFO 15847 --- [turf-booking-backend] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-12-01T20:58:36.837+05:30  INFO 15847 --- [turf-booking-backend] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-01T20:58:36.973+05:30  INFO 15847 --- [turf-booking-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-01T20:58:37.011+05:30  WARN 15847 --- [turf-booking-backend] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-01T20:58:37.668+05:30  INFO 15847 --- [turf-booking-backend] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: alter table activity_logs drop foreign key FK5bm1lt4f4eevt8lv2517soakd
+Hibernate: alter table booking_participants drop foreign key FKsw6l1r2ynjttr4lg40n1mkswk
+Hibernate: alter table bookings drop foreign key FKogtxf1eihwrg3997vor7nq2c5
+Hibernate: alter table friends drop foreign key FKc42eihjtiryeriy8axlkpejo7
+Hibernate: alter table friends drop foreign key FKlh21lfp7th1y1tn9g63ihkda9
+Hibernate: alter table matches drop foreign key FKmrgum5di41ywbw87fdecijmvs
+Hibernate: alter table matches drop foreign key FKntr6m7io9k4xcxgn7prtyojko
+Hibernate: alter table notifications drop foreign key FK9y21adhxn0ayjhfocscqox7bh
+Hibernate: alter table qr_codes drop foreign key FKf5ikap1fe0f1x4njqaau2o8vu
+Hibernate: alter table refreshtoken drop foreign key FKa652xrdji49m4isx38pp4p80p
+Hibernate: alter table team_members drop foreign key FKtgca08el3ofisywcf11f0f76t
+Hibernate: alter table team_members drop foreign key FKee8x7x5026imwmma9kndkxs36
+Hibernate: alter table user_achievements drop foreign key FK8ipvec6cs8t3g8515thtlsxuf
+Hibernate: alter table user_achievements drop foreign key FK6vt5fpu0uta41vny1x6vpk45k
+Hibernate: drop table if exists achievements
+Hibernate: drop table if exists activity_logs
+Hibernate: drop table if exists booking_participants
+Hibernate: drop table if exists bookings
+Hibernate: drop table if exists friends
+Hibernate: drop table if exists matches
+Hibernate: drop table if exists notifications
+Hibernate: drop table if exists payments
+Hibernate: drop table if exists qr_codes
+Hibernate: drop table if exists refreshtoken
+Hibernate: drop table if exists refreshtoken_seq
+Hibernate: drop table if exists team_members
+Hibernate: drop table if exists teams
+Hibernate: drop table if exists turf_slots
+Hibernate: drop table if exists turfs
+Hibernate: drop table if exists user_achievements
+Hibernate: drop table if exists users
+Hibernate: create table achievements (max_progress integer not null, id varchar(50) not null, name varchar(100) not null, description TEXT, icon_url varchar(255), category enum ('MATCHES','WINS','TEAM','SOCIAL','SPECIAL') not null, primary key (id)) engine=InnoDB
+Hibernate: create table activity_logs (created_at datetime(6) not null, id bigint not null auto_increment, related_user_id bigint, user_id bigint not null, related_user_name varchar(100), message TEXT not null, type enum ('FRIEND_WIN','TEAM_RANK_CHANGE','BOOKING_CONFIRMED','ACHIEVEMENT_UNLOCKED') not null, primary key (id)) engine=InnoDB
+Hibernate: create table booking_participants (share_amount decimal(38,2) not null, booking_id bigint not null, created_at datetime(6), id bigint not null auto_increment, payment_id bigint, user_id bigint not null, status enum ('SENT','PENDING','PAID','REJECTED','DECLINED') not null, primary key (id)) engine=InnoDB
+Hibernate: create table bookings (total_amount decimal(10,2) not null, cancelled_at datetime(6), checked_in_at datetime(6), confirmed_at datetime(6), created_at datetime(6) not null, expires_at datetime(6), id bigint not null auto_increment, slot_id bigint not null, turf_id bigint not null, user_id bigint, qr_secret varchar(100), customer_name varchar(255), customer_phone varchar(255), status enum ('PENDING','CONFIRMED','EXPIRED','CANCELLED','COMPLETED') not null, primary key (id)) engine=InnoDB
+Hibernate: create table friends (created_at datetime(6), friend_id bigint not null, id bigint not null auto_increment, user_id bigint not null, status enum ('SENT','PENDING','ACCEPTED','REJECTED','REMOVED','BLOCKED') not null, primary key (id)) engine=InnoDB
+Hibernate: create table matches (result_verified bit, booking_id bigint, created_at datetime(6), id bigint not null auto_increment, slot_id bigint, team_a_id bigint not null, team_b_id bigint, turf_id bigint, winner_team_id bigint, payment_status varchar(255), status varchar(255) not null, primary key (id)) engine=InnoDB
+Hibernate: create table notifications (actionable bit not null, is_read bit not null, created_at datetime(6) not null, id bigint not null auto_increment, related_id bigint, user_id bigint not null, related_type varchar(50), message TEXT not null, type enum ('INFO','ALERT','REQUEST','APPROVAL','MATCH_CHALLENGE') not null, primary key (id)) engine=InnoDB
+Hibernate: create table payments (amount decimal(38,2) not null, booking_id bigint not null, created_at datetime(6), id bigint not null auto_increment, user_id bigint not null, provider_payment_id varchar(255), status varchar(255) not null, primary key (id)) engine=InnoDB
+Hibernate: create table qr_codes (booking_id bigint not null, generated_at datetime(6) not null, id bigint not null auto_increment, scanned_at datetime(6), scanned_by bigint, qr_secret varchar(100) not null, qr_code_data TEXT, primary key (id)) engine=InnoDB
+Hibernate: create table refreshtoken (expiry_date datetime(6) not null, id bigint not null, user_id bigint, token varchar(255) not null, primary key (id)) engine=InnoDB
+Hibernate: create table refreshtoken_seq (next_val bigint) engine=InnoDB
+Hibernate: insert into refreshtoken_seq values ( 1 )
+Hibernate: create table team_members (id bigint not null auto_increment, joined_at datetime(6), team_id bigint not null, user_id bigint not null, role varchar(255) not null, status varchar(255) not null, primary key (id)) engine=InnoDB
+Hibernate: create table teams (matches_played integer, matches_won integer, skill_rating integer, captain_id bigint not null, created_at datetime(6), deleted_at datetime(6), id bigint not null auto_increment, description TEXT, join_policy varchar(255), logo_url varchar(255), name varchar(255) not null, primary key (id)) engine=InnoDB
+Hibernate: create table turf_slots (custom_price decimal(10,2), end_time time(6) not null, is_available bit, is_locked bit, slot_date date not null, start_time time(6) not null, id bigint not null auto_increment, lock_expires_at datetime(6), locked_at datetime(6), locked_by bigint, turf_id bigint not null, version bigint, primary key (id)) engine=InnoDB
+Hibernate: create table turfs (base_price decimal(10,2), created_at datetime(6), deleted_at datetime(6), id bigint not null auto_increment, owner_id bigint not null, amenities json, images json, location varchar(255) not null, name varchar(255) not null, pricing_rules json, primary key (id)) engine=InnoDB
+Hibernate: create table user_achievements (progress integer not null, unlocked bit not null, created_at datetime(6) not null, id bigint not null auto_increment, unlocked_at datetime(6), user_id bigint not null, achievement_id varchar(50) not null, primary key (id)) engine=InnoDB
+Hibernate: create table users (enabled bit not null, level integer, level_progress integer, matches_played integer, matches_won integer, skill_rating integer, created_at datetime(6) not null, deleted_at datetime(6), id bigint not null auto_increment, updated_at datetime(6), phone varchar(20), name varchar(100) not null, avatar_url varchar(500), email varchar(255) not null, password_hash varchar(255) not null, role enum ('USER','OWNER','ADMIN') not null, primary key (id)) engine=InnoDB
+Hibernate: create index idx_activity_logs_user_created on activity_logs (user_id, created_at desc)
 Hibernate: alter table booking_participants add constraint UKllgh8wfd7cxam1iw4y0ww3acg unique (booking_id, user_id)
-Hibernate: alter table turf_slots drop index idx_turf_slots_unique
+Hibernate: create index idx_bookings_user_status on bookings (user_id, status)
+Hibernate: create index idx_bookings_expires_at on bookings (status, expires_at)
+Hibernate: alter table bookings add constraint idx_bookings_slot_id unique (slot_id)
+Hibernate: alter table bookings add constraint UK_25259ykenp5iswx1uxdwbpevp unique (qr_secret)
+Hibernate: alter table friends add constraint UKk3jl1difk6e2tixicas048c9o unique (user_id, friend_id)
+Hibernate: create index idx_notifications_user_read_created on notifications (user_id, is_read, created_at)
+Hibernate: alter table qr_codes add constraint UK_7lnkb7rued3we15h5t13dd2xq unique (booking_id)
+Hibernate: alter table qr_codes add constraint UK_5mmhnxu261c4etv9k31yki5my unique (qr_secret)
+Hibernate: alter table refreshtoken add constraint UK_81otwtvdhcw7y3ipoijtlb1g3 unique (user_id)
+Hibernate: alter table refreshtoken add constraint UK_or156wbneyk8noo4jstv55ii3 unique (token)
+Hibernate: alter table team_members add constraint UKs8nuwsa7nvebc246ed822w68x unique (team_id, user_id)
+Hibernate: create index idx_turf_slots_date on turf_slots (slot_date)
+Hibernate: create index idx_turf_slots_lock_expiry on turf_slots (is_locked, lock_expires_at)
 Hibernate: alter table turf_slots add constraint idx_turf_slots_unique unique (turf_id, slot_date, start_time)
+Hibernate: create index idx_user_achievements_user on user_achievements (user_id)
+Hibernate: create index idx_user_achievements_unlocked on user_achievements (unlocked)
+Hibernate: alter table user_achievements add constraint UKehxedycprv0kd4wts369ikmw1 unique (user_id, achievement_id)
+Hibernate: create index idx_users_role on users (role)
+Hibernate: alter table users add constraint UK_6dotkott2kjsp8vw4d0m25fb7 unique (email)
+Hibernate: alter table activity_logs add constraint FK5bm1lt4f4eevt8lv2517soakd foreign key (user_id) references users (id)
 Hibernate: alter table booking_participants add constraint FKsw6l1r2ynjttr4lg40n1mkswk foreign key (user_id) references users (id)
-2025-11-27T09:48:20.880+05:30  INFO 50973 --- [turf-booking-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-11-27T09:48:21.208+05:30  INFO 50973 --- [turf-booking-backend] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-11-27T09:48:22.156+05:30  WARN 50973 --- [turf-booking-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-11-27T09:48:22.334+05:30  INFO 50973 --- [turf-booking-backend] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@69e0f16, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2ece1629, org.springframework.security.web.context.SecurityContextHolderFilter@6b928c79, org.springframework.security.web.header.HeaderWriterFilter@6c2dec7f, org.springframework.web.filter.CorsFilter@58178c5e, org.springframework.security.web.authentication.logout.LogoutFilter@1579cf25, com.turfbook.backend.security.AuthTokenFilter@1677f98b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6fa1dc0c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74037f9b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@329e6700, org.springframework.security.web.session.SessionManagementFilter@5a8f777, org.springframework.security.web.access.ExceptionTranslationFilter@307fe491, org.springframework.security.web.access.intercept.AuthorizationFilter@cb4999d]
-2025-11-27T09:48:22.529+05:30  INFO 50973 --- [turf-booking-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2025-11-27T09:48:22.530+05:30  INFO 50973 --- [turf-booking-backend] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
-2025-11-27T09:48:22.531+05:30  INFO 50973 --- [turf-booking-backend] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@43f1a188]]
-2025-11-27T09:48:22.531+05:30  INFO 50973 --- [turf-booking-backend] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
-2025-11-27T09:48:22.535+05:30  INFO 50973 --- [turf-booking-backend] [           main] c.t.backend.TurfBookingApplication       : Started TurfBookingApplication in 4.376 seconds (process running for 4.557)
+Hibernate: alter table bookings add constraint FKogtxf1eihwrg3997vor7nq2c5 foreign key (turf_id) references turfs (id)
+Hibernate: alter table friends add constraint FKc42eihjtiryeriy8axlkpejo7 foreign key (friend_id) references users (id)
+Hibernate: alter table friends add constraint FKlh21lfp7th1y1tn9g63ihkda9 foreign key (user_id) references users (id)
+Hibernate: alter table matches add constraint FKmrgum5di41ywbw87fdecijmvs foreign key (team_a_id) references teams (id)
+Hibernate: alter table matches add constraint FKntr6m7io9k4xcxgn7prtyojko foreign key (team_b_id) references teams (id)
+Hibernate: alter table notifications add constraint FK9y21adhxn0ayjhfocscqox7bh foreign key (user_id) references users (id)
+Hibernate: alter table qr_codes add constraint FKf5ikap1fe0f1x4njqaau2o8vu foreign key (booking_id) references bookings (id)
+Hibernate: alter table refreshtoken add constraint FKa652xrdji49m4isx38pp4p80p foreign key (user_id) references users (id)
+Hibernate: alter table team_members add constraint FKtgca08el3ofisywcf11f0f76t foreign key (team_id) references teams (id)
+Hibernate: alter table team_members add constraint FKee8x7x5026imwmma9kndkxs36 foreign key (user_id) references users (id)
+Hibernate: alter table user_achievements add constraint FK8ipvec6cs8t3g8515thtlsxuf foreign key (achievement_id) references achievements (id)
+Hibernate: alter table user_achievements add constraint FK6vt5fpu0uta41vny1x6vpk45k foreign key (user_id) references users (id)
+2025-12-01T20:58:39.270+05:30  INFO 15847 --- [turf-booking-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-01T20:58:39.874+05:30  INFO 15847 --- [turf-booking-backend] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-01T20:58:41.697+05:30  WARN 15847 --- [turf-booking-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-01T20:58:42.031+05:30  INFO 15847 --- [turf-booking-backend] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@307fe491, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f9de548, org.springframework.security.web.context.SecurityContextHolderFilter@739785c5, org.springframework.security.web.header.HeaderWriterFilter@44e31522, org.springframework.web.filter.CorsFilter@6c2dec7f, org.springframework.security.web.authentication.logout.LogoutFilter@68606061, com.turfbook.backend.security.AuthTokenFilter@38ae69f7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@73a65712, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a5e9de1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c3577ec, org.springframework.security.web.session.SessionManagementFilter@5eab49e8, org.springframework.security.web.access.ExceptionTranslationFilter@4c0e2715, org.springframework.security.web.access.intercept.AuthorizationFilter@296eda6c]
+2025-12-01T20:58:42.547+05:30  INFO 15847 --- [turf-booking-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-12-01T20:58:42.549+05:30  INFO 15847 --- [turf-booking-backend] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-12-01T20:58:42.551+05:30  INFO 15847 --- [turf-booking-backend] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2cf065e9]]
+2025-12-01T20:58:42.551+05:30  INFO 15847 --- [turf-booking-backend] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-12-01T20:58:42.561+05:30  INFO 15847 --- [turf-booking-backend] [           main] c.t.backend.TurfBookingApplication       : Started TurfBookingApplication in 8.11 seconds (process running for 8.527)
 Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
 Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
-2025-11-27T09:49:22.520+05:30  INFO 50973 --- [turf-booking-backend] [MessageBroker-2] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 3, active threads = 1, queued tasks = 1, completed tasks = 1]
+2025-12-01T20:58:44.100+05:30  INFO 15847 --- [turf-booking-backend] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-01T20:58:44.100+05:30  INFO 15847 --- [turf-booking-backend] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-01T20:58:44.103+05:30  INFO 15847 --- [turf-booking-backend] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-12-01T20:58:44.128+05:30  WARN 15847 --- [turf-booking-backend] [nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/auth/register' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+Hibernate: select u1_0.id from users u1_0 where u1_0.email=? limit ?
+Hibernate: insert into users (avatar_url,created_at,deleted_at,email,enabled,level,level_progress,matches_played,matches_won,name,password_hash,phone,role,skill_rating,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select u1_0.id,u1_0.avatar_url,u1_0.created_at,u1_0.deleted_at,u1_0.email,u1_0.enabled,u1_0.level,u1_0.level_progress,u1_0.matches_played,u1_0.matches_won,u1_0.name,u1_0.password_hash,u1_0.phone,u1_0.role,u1_0.skill_rating,u1_0.updated_at from users u1_0 where u1_0.email=?
+Hibernate: select rt1_0.id,rt1_0.expiry_date,rt1_0.token,rt1_0.user_id from refreshtoken rt1_0 where rt1_0.user_id=?
+Hibernate: select next_val as id_val from refreshtoken_seq for update
+Hibernate: update refreshtoken_seq set next_val= ? where next_val=?
+Hibernate: insert into refreshtoken (expiry_date,token,user_id,id) values (?,?,?,?)
+Generated Refresh Token: 2846f951-07f3-4ee5-8a27-fa7589b0fa4c
+2025-12-01T20:58:45.007+05:30  INFO 15847 --- [turf-booking-backend] [nio-8080-exec-3] c.t.backend.security.AuthTokenFilter     : JWT Token present, validating...
+[JWT Validation] Attempting to validate token: eyJhbGciOiJIUzI1NiJ9...
+[JWT Validation] Using secret key (first 10 chars): 404E635266...
+[JWT Validation] Token is VALID
+2025-12-01T20:58:45.038+05:30  INFO 15847 --- [turf-booking-backend] [nio-8080-exec-3] c.t.backend.security.AuthTokenFilter     : Valid JWT for user: testuser@example.com
+Hibernate: select u1_0.id,u1_0.avatar_url,u1_0.created_at,u1_0.deleted_at,u1_0.email,u1_0.enabled,u1_0.level,u1_0.level_progress,u1_0.matches_played,u1_0.matches_won,u1_0.name,u1_0.password_hash,u1_0.phone,u1_0.role,u1_0.skill_rating,u1_0.updated_at from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.avatar_url,u1_0.created_at,u1_0.deleted_at,u1_0.email,u1_0.enabled,u1_0.level,u1_0.level_progress,u1_0.matches_played,u1_0.matches_won,u1_0.name,u1_0.password_hash,u1_0.phone,u1_0.role,u1_0.skill_rating,u1_0.updated_at from users u1_0 where u1_0.id=?
+Hibernate: select rt1_0.id,rt1_0.expiry_date,rt1_0.token,rt1_0.user_id from refreshtoken rt1_0 where rt1_0.token=?
+Hibernate: select u1_0.id,u1_0.avatar_url,u1_0.created_at,u1_0.deleted_at,u1_0.email,u1_0.enabled,u1_0.level,u1_0.level_progress,u1_0.matches_played,u1_0.matches_won,u1_0.name,u1_0.password_hash,u1_0.phone,u1_0.role,u1_0.skill_rating,u1_0.updated_at from users u1_0 where u1_0.id=?
+2025-12-01T20:58:45.132+05:30  INFO 15847 --- [turf-booking-backend] [nio-8080-exec-6] c.t.backend.security.AuthTokenFilter     : JWT Token present, validating...
+[JWT Validation] Attempting to validate token: eyJhbGciOiJIUzI1NiJ9...
+[JWT Validation] Using secret key (first 10 chars): 404E635266...
+[JWT Validation] Token is VALID
+2025-12-01T20:58:45.136+05:30  INFO 15847 --- [turf-booking-backend] [nio-8080-exec-6] c.t.backend.security.AuthTokenFilter     : Valid JWT for user: testuser@example.com
+Hibernate: select u1_0.id,u1_0.avatar_url,u1_0.created_at,u1_0.deleted_at,u1_0.email,u1_0.enabled,u1_0.level,u1_0.level_progress,u1_0.matches_played,u1_0.matches_won,u1_0.name,u1_0.password_hash,u1_0.phone,u1_0.role,u1_0.skill_rating,u1_0.updated_at from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.avatar_url,u1_0.created_at,u1_0.deleted_at,u1_0.email,u1_0.enabled,u1_0.level,u1_0.level_progress,u1_0.matches_played,u1_0.matches_won,u1_0.name,u1_0.password_hash,u1_0.phone,u1_0.role,u1_0.skill_rating,u1_0.updated_at from users u1_0 where u1_0.id=?
+2025-12-01T20:59:42.527+05:30  INFO 15847 --- [turf-booking-backend] [MessageBroker-2] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 3, active threads = 1, queued tasks = 1, completed tasks = 1]
 Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
 Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
 Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
 Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
-2025-11-27T09:51:02.457+05:30  INFO 50973 --- [turf-booking-backend] [ionShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
-2025-11-27T09:51:02.457+05:30  INFO 50973 --- [turf-booking-backend] [ionShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@43f1a188]]
-2025-11-27T09:51:02.457+05:30  INFO 50973 --- [turf-booking-backend] [ionShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
-2025-11-27T09:51:02.464+05:30  INFO 50973 --- [turf-booking-backend] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-11-27T09:51:02.465+05:30  INFO 50973 --- [turf-booking-backend] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-11-27T09:51:02.472+05:30  INFO 50973 --- [turf-booking-backend] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+2025-12-01T21:29:42.528+05:30  INFO 15847 --- [turf-booking-backend] [essageBroker-12] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 1, completed tasks = 32]
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+Hibernate: select ts1_0.id,ts1_0.custom_price,ts1_0.slot_date,ts1_0.end_time,ts1_0.is_available,ts1_0.is_locked,ts1_0.lock_expires_at,ts1_0.locked_at,ts1_0.locked_by,ts1_0.start_time,ts1_0.turf_id,ts1_0.version from turf_slots ts1_0 where ts1_0.is_locked and ts1_0.lock_expires_at<?
+Hibernate: select b1_0.id,b1_0.cancelled_at,b1_0.checked_in_at,b1_0.confirmed_at,b1_0.created_at,b1_0.customer_name,b1_0.customer_phone,b1_0.expires_at,b1_0.qr_secret,b1_0.slot_id,b1_0.status,b1_0.total_amount,b1_0.turf_id,b1_0.user_id from bookings b1_0 where b1_0.status=? and b1_0.expires_at<?
+2025-12-01T21:35:54.431+05:30  INFO 15847 --- [turf-booking-backend] [ionShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-12-01T21:35:54.431+05:30  INFO 15847 --- [turf-booking-backend] [ionShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2cf065e9]]
+2025-12-01T21:35:54.431+05:30  INFO 15847 --- [turf-booking-backend] [ionShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-12-01T21:35:54.443+05:30  INFO 15847 --- [turf-booking-backend] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-01T21:35:54.445+05:30  INFO 15847 --- [turf-booking-backend] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-01T21:35:54.449+05:30  INFO 15847 --- [turf-booking-backend] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

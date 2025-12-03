@@ -48,7 +48,6 @@ com/turfbook/backend/model/Booking.class
 com/turfbook/backend/model/enums/PaymentStatus.class
 com/turfbook/backend/controller/BookingController.class
 com/turfbook/backend/repository/MatchRepository.class
-com/turfbook/backend/service/AuthService.class
 com/turfbook/backend/config/CorsConfig.class
 com/turfbook/backend/model/ActivityLog.class
 com/turfbook/backend/dto/request/LoginRequest.class

@@ -13,6 +13,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import com.turfbook.backend.model.RefreshToken;
+import com.turfbook.backend.security.RefreshTokenService;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -49,7 +51,12 @@ public class AuthController {
             role = role.substring(5);
         }
 
+        RefreshToken refreshToken = refreshTokenService.createRefreshToken(userDetails.getId());
+
+        System.out.println("Generated Refresh Token: " + refreshToken.getToken());
+
         return ResponseEntity.ok(new AuthDto.JwtResponse(jwt,
+                refreshToken.getToken(),
                 userDetails.getId(),
                 userDetails.getUsername(),
                 userDetails.getEmail(),
@@ -80,7 +87,7 @@ public class AuthController {
     }
 
     @Autowired
-    private com.turfbook.backend.security.RefreshTokenService refreshTokenService;
+    private RefreshTokenService refreshTokenService;
 
     @Autowired
     private com.turfbook.backend.service.PasswordResetService passwordResetService;
@@ -89,14 +96,24 @@ public class AuthController {
     public ResponseEntity<?> refreshtoken(@Valid @RequestBody AuthDto.TokenRefreshRequest request) {
         String requestRefreshToken = request.getRefreshToken();
 
-        // Mock logic: In real app, verify token in DB
-        if (requestRefreshToken != null && !requestRefreshToken.isEmpty()) {
-            // Generate new access token
-            String newAccessToken = jwtUtils.generateTokenFromUsername("mockUser"); // We need a way to get username
-            return ResponseEntity.ok(new AuthDto.TokenRefreshResponse(newAccessToken, requestRefreshToken));
-        }
+        return refreshTokenService.findByToken(requestRefreshToken)
+                .map(refreshTokenService::verifyExpiration)
+                .map(RefreshToken::getUser)
+                .map(user -> {
+                    String token = jwtUtils.generateTokenFromUsername(user.getEmail());
+                    return ResponseEntity.ok(new AuthDto.TokenRefreshResponse(token, requestRefreshToken));
+                })
+                .orElseThrow(() -> new com.turfbook.backend.exception.TokenRefreshException(requestRefreshToken,
+                        "Refresh token is not in database!"));
+    }
 
-        return ResponseEntity.badRequest().body("Invalid refresh token");
+    @PostMapping("/logout")
+    public ResponseEntity<?> logoutUser() {
+        UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
+                .getPrincipal();
+        Long userId = userDetails.getId();
+        refreshTokenService.deleteByUserId(userId);
+        return ResponseEntity.ok("Log out successful!");
     }
 
     @PostMapping("/forgot-password")
